@@ -1,10 +1,19 @@
 <!DOCTYPE html>
-<!-- Created By CodingNepal -->
+<!-- Enhanced DarkHolds Website with Impressive Loading Animation -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DarkHolds - Professional Cybersecurity Solutions & Penetration Testing</title>
+    
+    <!-- Performance Optimization -->
+    <meta name="theme-color" content="#0a1628">
+    <meta name="msapplication-TileColor" content="#0a1628">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="DarkHolds provides professional cybersecurity solutions, penetration testing, vulnerability assessments, and digital security consulting. Protect your business with expert cybersecurity services.">
@@ -88,21 +97,88 @@
 
 </head>
 <body>
-    <!-- Loading Animation -->
+    <!-- Enhanced Loading Animation -->
     <div id="loader" class="loader">
+        <!-- Animated Background -->
+        <div class="loader-bg">
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <div class="cyber-grid"></div>
+        </div>
+        
         <div class="loader-content">
+            <!-- Enhanced Logo with Glow -->
             <div class="loader-logo">
-                <svg viewBox="0 0 100 100" width="80" height="80">
-                    <circle cx="50" cy="50" r="48" fill="#001122"/>
-                    <path d="M50 15L65 35L85 35L70 50L75 70L50 60L25 70L30 50L15 35L35 35Z" fill="#FFD700"/>
-                </svg>
+                <div class="logo-container">
+                    <svg viewBox="0 0 100 100" width="120" height="120">
+                        <defs>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/> 
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="#001122" filter="url(#glow)"/>
+                        <path d="M50 15L65 35L85 35L70 50L75 70L50 60L25 70L30 50L15 35L35 35Z" fill="#FFD700" filter="url(#glow)"/>
+                    </svg>
+                    <div class="logo-ring"></div>
+                    <div class="logo-ring-2"></div>
+                </div>
             </div>
+            
+            <!-- Glitch Effect Text -->
             <div class="loader-text">
-                <h3>DarkHolds</h3>
-                <p>Securing Your Digital World</p>
+                <h3 class="glitch-text" data-text="DarkHolds">DarkHolds</h3>
+                <p class="tagline">Securing Your Digital World</p>
+                <div class="loading-status">
+                    <span class="status-text">Initializing Security Protocols...</span>
+                </div>
             </div>
+            
+            <!-- Enhanced Progress Bar -->
             <div class="loader-progress">
-                <div class="progress-bar"></div>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                        <div class="progress-glow"></div>
+                    </div>
+                    <div class="progress-percentage">0%</div>
+                </div>
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <!-- Security Scanning Animation -->
+            <div class="security-scan">
+                <div class="scan-line"></div>
+                <div class="scan-data">
+                    <div class="data-stream">
+                        <span>Encrypting connections...</span>
+                        <span>Verifying certificates...</span>
+                        <span>Establishing secure tunnel...</span>
+                        <span>Loading secure environment...</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -928,95 +1004,127 @@
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-star"></i>
-                                <span>4.8/5 Average Rating</span>
+                                <span id="avg-rating-display">4.8/5 Average Rating</span>
                             </div>
                             <div class="highlight-item">
                                 <i class="fas fa-users"></i>
-                                <span>127 Happy Customers</span>
+                                <span id="total-reviews-display">127 Happy Customers</span>
                             </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Live Reviews Display -->
+                    <div class="live-reviews">
+                        <h4>Recent Reviews</h4>
+                        <div class="reviews-container" id="live-reviews-container">
+                            <!-- Reviews will be displayed here -->
                         </div>
                     </div>
                 </div>
                 
                 <div class="rating-right">
                     <div class="rating-card">
-                        <div class="rating-header">
-                            <div class="rating-icon">
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <h3>Rate Your Experience</h3>
-                            <p>How would you rate our cybersecurity services?</p>
-                        </div>
-                        
-                        <div class="rating-stars-container">
-                            <div class="rating-stars">
-                                <span class="star" data-rating="1">★</span>
-                                <span class="star" data-rating="2">★</span>
-                                <span class="star" data-rating="3">★</span>
-                                <span class="star" data-rating="4">★</span>
-                                <span class="star" data-rating="5">★</span>
-                            </div>
-                            <div class="rating-text">
-                                <span class="rating-value">0</span> out of 5 stars
-                            </div>
-                            <div class="rating-labels">
-                                <span class="rating-label" data-rating="1">Poor</span>
-                                <span class="rating-label" data-rating="2">Fair</span>
-                                <span class="rating-label" data-rating="3">Good</span>
-                                <span class="rating-label" data-rating="4">Very Good</span>
-                                <span class="rating-label" data-rating="5">Excellent</span>
-                            </div>
-                        </div>
-                        
-                        <div class="rating-form">
-                            <div class="form-group">
-                                <label for="rating-name">Your Name</label>
-                                <input type="text" id="rating-name" class="rating-input" placeholder="Enter your name">
+                        <div id="rating-form-section">
+                            <div class="rating-header">
+                                <div class="rating-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3>Rate Your Experience</h3>
+                                <p>How would you rate our cybersecurity services?</p>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="rating-service">Service Used</label>
-                                <select id="rating-service" class="rating-select">
-                                    <option value="">Select service</option>
-                                    <option value="penetration-testing">Penetration Testing</option>
-                                    <option value="vulnerability-assessment">Vulnerability Assessment</option>
-                                    <option value="security-consulting">Security Consulting</option>
-                                    <option value="incident-response">Incident Response</option>
-                                    <option value="security-training">Security Training</option>
-                                    <option value="compliance-audit">Compliance Auditing</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="rating-comment">Your Review</label>
-                                <textarea id="rating-comment" class="rating-comment" placeholder="Share your detailed experience with our cybersecurity services..." rows="4"></textarea>
-                                <div class="char-count">
-                                    <span class="current-chars">0</span>/<span class="max-chars">500</span> characters
+                            <div class="rating-stars-container">
+                                <div class="rating-stars">
+                                    <span class="star" data-rating="1">★</span>
+                                    <span class="star" data-rating="2">★</span>
+                                    <span class="star" data-rating="3">★</span>
+                                    <span class="star" data-rating="4">★</span>
+                                    <span class="star" data-rating="5">★</span>
+                                </div>
+                                <div class="rating-text">
+                                    <span class="rating-value">0</span> out of 5 stars
+                                </div>
+                                <div class="rating-labels">
+                                    <span class="rating-label" data-rating="1">Poor</span>
+                                    <span class="rating-label" data-rating="2">Fair</span>
+                                    <span class="rating-label" data-rating="3">Good</span>
+                                    <span class="rating-label" data-rating="4">Very Good</span>
+                                    <span class="rating-label" data-rating="5">Excellent</span>
                                 </div>
                             </div>
                             
-                            <button class="rating-submit">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Submit Review</span>
-                            </button>
+                            <div class="rating-form">
+                                <div class="form-group">
+                                    <label for="rating-name">Your Name</label>
+                                    <input type="text" id="rating-name" class="rating-input" placeholder="Enter your name" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rating-email">Email (for verification)</label>
+                                    <input type="email" id="rating-email" class="rating-input" placeholder="Enter your email" required>
+                                    <small class="email-note">Email is used only to prevent duplicate ratings</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rating-service">Service Used</label>
+                                    <select id="rating-service" class="rating-select" required>
+                                        <option value="">Select service</option>
+                                        <option value="penetration-testing">Penetration Testing</option>
+                                        <option value="vulnerability-assessment">Vulnerability Assessment</option>
+                                        <option value="security-consulting">Security Consulting</option>
+                                        <option value="incident-response">Incident Response</option>
+                                        <option value="security-training">Security Training</option>
+                                        <option value="compliance-audit">Compliance Auditing</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="rating-comment">Your Review</label>
+                                    <textarea id="rating-comment" class="rating-comment" placeholder="Share your detailed experience with our cybersecurity services..." rows="4" required></textarea>
+                                    <div class="char-count">
+                                        <span class="current-chars">0</span>/<span class="max-chars">500</span> characters
+                                    </div>
+                                </div>
+                                
+                                <button class="rating-submit" id="rating-submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Submit Review</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Already Rated Message -->
+                        <div id="already-rated-section" class="already-rated" style="display: none;">
+                            <div class="already-rated-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h3>Thank You!</h3>
+                            <p>You have already submitted a review. We appreciate your feedback!</p>
+                            <div class="your-rating">
+                                <span>Your Rating: </span>
+                                <div class="user-stars">
+                                    <!-- User's stars will be displayed here -->
+                                </div>
+                            </div>
+                            <p class="rating-date">Submitted on: <span id="user-rating-date"></span></p>
                         </div>
                         
                         <div class="rating-stats">
                             <div class="stat-item">
                                 <div class="stat-circle">
-                                    <span class="stat-number">4.8</span>
+                                    <span class="stat-number" id="avg-rating-stat">4.8</span>
                                 </div>
                                 <span class="stat-label">Average Rating</span>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-circle">
-                                    <span class="stat-number">127</span>
+                                    <span class="stat-number" id="total-ratings-stat">127</span>
                                 </div>
                                 <span class="stat-label">Total Reviews</span>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-circle">
-                                    <span class="stat-number">98%</span>
+                                    <span class="stat-number" id="satisfaction-stat">98%</span>
                                 </div>
                                 <span class="stat-label">Satisfaction</span>
                             </div>

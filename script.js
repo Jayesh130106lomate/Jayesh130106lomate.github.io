@@ -1,30 +1,258 @@
 $(document).ready(function(){
-    // Loading Animation
+    // Enhanced Loading Animation with improved mobile support
     function initLoader() {
-        var progress = $('.progress-bar');
-        var loader = $('#loader');
+        var $progressFill = $('.progress-fill');
+        var $progressGlow = $('.progress-glow');
+        var $progressPercentage = $('.progress-percentage');
+        var $loader = $('#loader');
+        var $statusText = $('.status-text');
         
-        // Simulate loading progress
-        setTimeout(() => {
-            progress.css('width', '30%');
-        }, 500);
+        var progress = 0;
+        var loadingMessages = [
+            'Initializing Security Protocols...',
+            'Scanning Network Infrastructure...',
+            'Establishing Encrypted Connections...',
+            'Verifying Digital Certificates...',
+            'Deploying Security Measures...',
+            'Loading Security Dashboard...',
+            'Finalizing Secure Environment...'
+        ];
         
-        setTimeout(() => {
-            progress.css('width', '70%');
-        }, 1500);
+        var messageIndex = 0;
         
-        setTimeout(() => {
-            progress.css('width', '100%');
-        }, 2500);
+        // Enhanced progress animation with better easing
+        function updateProgress(targetProgress, duration) {
+            return new Promise((resolve) => {
+                var startProgress = progress;
+                var startTime = Date.now();
+                
+                function animate() {
+                    var elapsed = Date.now() - startTime;
+                    var progressRatio = Math.min(elapsed / duration, 1);
+                    
+                    // Improved easing function for smoother animation
+                    var easedProgress = startProgress + (targetProgress - startProgress) * easeOutCubic(progressRatio);
+                    progress = easedProgress;
+                    
+                    // Update progress bar with enhanced visual feedback
+                    $progressFill.css('width', progress + '%');
+                    $progressGlow.css('width', progress + '%');
+                    $progressPercentage.text(Math.round(progress) + '%');
+                    
+                    // Add subtle bounce effect at milestones
+                    if (Math.round(progress) % 25 === 0 && Math.round(progress) > 0) {
+                        $progressPercentage.addClass('milestone-bounce');
+                        setTimeout(() => $progressPercentage.removeClass('milestone-bounce'), 300);
+                    }
+                    
+                    if (progressRatio < 1) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        resolve();
+                    }
+                }
+                
+                animate();
+            });
+        }
         
-        setTimeout(() => {
-            loader.addClass('hidden');
-            // Remove loader from DOM after animation
+        // Enhanced easing functions
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+        
+        function easeInOutQuart(t) {
+            return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
+        }
+        
+        // Enhanced message update with typing effect
+        function updateMessage(index) {
+            if (index < loadingMessages.length) {
+                $statusText.fadeOut(200, function() {
+                    var message = loadingMessages[index];
+                    var $this = $(this);
+                    $this.text('').fadeIn(200);
+                    
+                    // Typing effect
+                    var i = 0;
+                    function typeMessage() {
+                        if (i < message.length) {
+                            $this.text(message.substring(0, i + 1));
+                            i++;
+                            setTimeout(typeMessage, 30);
+                        }
+                    }
+                    typeMessage();
+                });
+            }
+        }
+        
+        // Enhanced loading sequence with better timing
+        async function loadingSequence() {
+            // Initial delay for dramatic effect
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Phase 1: Initialize (0-15%)
+            updateMessage(0);
+            await updateProgress(15, 1200);
+            await new Promise(resolve => setTimeout(resolve, 600));
+            
+            // Phase 2: Scanning (15-30%)
+            updateMessage(1);
+            await updateProgress(30, 1000);
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Phase 3: Connecting (30-50%)
+            updateMessage(2);
+            await updateProgress(50, 1100);
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            // Phase 4: Verifying (50-70%)
+            updateMessage(3);
+            await updateProgress(70, 900);
+            await new Promise(resolve => setTimeout(resolve, 400));
+            
+            // Phase 5: Deploying (70-85%)
+            updateMessage(4);
+            await updateProgress(85, 800);
+            await new Promise(resolve => setTimeout(resolve, 400));
+            
+            // Phase 6: Loading (85-95%)
+            updateMessage(5);
+            await updateProgress(95, 700);
+            await new Promise(resolve => setTimeout(resolve, 400));
+            
+            // Phase 7: Finalizing (95-100%)
+            updateMessage(6);
+            await updateProgress(100, 600);
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            
+            // Enhanced loader hiding with multiple transition effects
+            $statusText.fadeOut(400, function() {
+                $(this).text('Welcome to DarkHolds Security').fadeIn(400);
+            });
+            
+            await new Promise(resolve => setTimeout(resolve, 600));
+            
+            // Add completion effects
+            $progressPercentage.addClass('completion-glow');
+            $loader.addClass('completion-ready');
+            
+            await new Promise(resolve => setTimeout(resolve, 400));
+            
+            // Hide loader with enhanced animation sequence
+            $loader.addClass('hidden');
+            
+            // Remove loader from DOM after animation with cleanup
             setTimeout(() => {
-                loader.remove();
-            }, 500);
-        }, 3000);
+                $loader.remove();
+                
+                // Trigger completion events
+                $(document).trigger('loaderComplete');
+                
+                // Enhanced tracking with more data
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'loader_complete', {
+                        'event_category': 'User Experience',
+                        'event_label': 'enhanced_loader_animation',
+                        'value': Math.round(Date.now() - startTime)
+                    });
+                }
+                
+                // Trigger viewport-based animations
+                $(window).trigger('scroll');
+                
+                // Initialize lazy loading for better performance
+                if ('IntersectionObserver' in window) {
+                    initLazyLoading();
+                }
+                
+            }, 1200); // Increased time for smoother transition
+        }
+        
+        // Store start time for analytics
+        var startTime = Date.now();
+        
+        // Start the enhanced loading sequence
+        loadingSequence();
+        
+        // Enhanced particle system for better performance on mobile
+        function initParticleSystem() {
+            var isMobile = window.innerWidth <= 768;
+            var particleCount = isMobile ? 6 : 10;
+            var $particles = $('.particles');
+            
+            // Remove existing particles
+            $particles.empty();
+            
+            // Create optimized particles
+            for (var i = 0; i < particleCount; i++) {
+                var $particle = $('<div class="particle"></div>');
+                var delay = Math.random() * 3;
+                var duration = 6 + Math.random() * 3;
+                var left = 10 + (i * (80 / particleCount)) + Math.random() * 10;
+                
+                $particle.css({
+                    'left': left + '%',
+                    'animation-delay': delay + 's',
+                    'animation-duration': duration + 's'
+                });
+                
+                $particles.append($particle);
+            }
+        }
+        
+        // Initialize particle system
+        initParticleSystem();
+        
+        // Responsive particle adjustment
+        $(window).on('resize', debounce(initParticleSystem, 250));
+        
+        // Add click to skip loader (for development/testing)
+        $loader.on('click', function(e) {
+            if (e.detail === 3) { // Triple click to skip
+                $loader.addClass('hidden');
+                setTimeout(() => {
+                    $loader.remove();
+                    $(document).trigger('loaderComplete');
+                }, 1200);
+            }
+        });
     }
+    
+    // Utility function for debouncing
+    function debounce(func, wait) {
+        var timeout;
+        return function executedFunction(...args) {
+            var later = function() {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+    
+    // Lazy loading initialization for performance
+    function initLazyLoading() {
+        var imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    var img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Initialize the enhanced loader
+    initLoader();
     
     // Theme Toggle Functionality
     function initThemeToggle() {
@@ -686,11 +914,21 @@ $(document).ready(function(){
         var $stars = $('.rating-stars .star');
         var $ratingValue = $('.rating-value');
         var $ratingName = $('#rating-name');
+        var $ratingEmail = $('#rating-email');
         var $ratingService = $('#rating-service');
         var $ratingComment = $('#rating-comment');
         var $ratingSubmit = $('.rating-submit');
         var $charCount = $('.current-chars');
         var $ratingLabels = $('.rating-label');
+        var $ratingFormSection = $('#rating-form-section');
+        var $alreadyRatedSection = $('#already-rated-section');
+        var $liveReviewsContainer = $('#live-reviews-container');
+        
+        // Check for existing rating on page load
+        checkExistingRating();
+        
+        // Load and display existing reviews
+        loadExistingReviews();
         
         // Character counter for comment
         $ratingComment.on('input', function() {
@@ -767,6 +1005,15 @@ $(document).ready(function(){
                 $ratingName.css('border-color', '');
             }
             
+            var email = $ratingEmail.val().trim();
+            if (!email || !isValidEmail(email)) {
+                errors.push('Please enter a valid email address');
+                $ratingEmail.css('border-color', '#ff6b6b');
+                isValid = false;
+            } else {
+                $ratingEmail.css('border-color', '');
+            }
+            
             if ($ratingService.val() === '') {
                 errors.push('Please select a service');
                 $ratingService.css('border-color', '#ff6b6b');
@@ -795,6 +1042,14 @@ $(document).ready(function(){
                 return;
             }
             
+            var email = $ratingEmail.val().trim();
+            
+            // Check if user has already rated
+            if (hasUserAlreadyRated(email)) {
+                showValidationErrors(['You have already submitted a review with this email address.']);
+                return;
+            }
+            
             var $btn = $(this);
             var $btnText = $btn.find('span');
             var $btnIcon = $btn.find('i');
@@ -804,6 +1059,7 @@ $(document).ready(function(){
             var reviewData = {
                 rating: currentRating,
                 name: $ratingName.val().trim(),
+                email: email,
                 service: $ratingService.val(),
                 comment: $ratingComment.val().trim(),
                 date: new Date().toISOString()
@@ -819,11 +1075,20 @@ $(document).ready(function(){
                 $btnText.text('Review Submitted!');
                 $btnIcon.removeClass('fa-spinner fa-spin').addClass('fa-check');
                 
+                // Store the review
+                storeUserRating(reviewData);
+                
                 // Show success animation
                 showRatingSuccess(reviewData);
                 
                 // Update stats
                 updateRatingStats();
+                
+                // Add review to live display
+                addReviewToDisplay(reviewData);
+                
+                // Show already rated section
+                showAlreadyRatedSection(reviewData);
                 
                 setTimeout(function() {
                     // Reset form
@@ -894,14 +1159,132 @@ $(document).ready(function(){
             showRatingLabel(0);
             $ratingValue.text('0');
             $ratingName.val('');
+            $ratingEmail.val('');
             $ratingService.val('');
             $ratingComment.val('');
             $charCount.text('0');
             
             // Reset border colors
             $ratingName.css('border-color', '');
+            $ratingEmail.css('border-color', '');
             $ratingService.css('border-color', '');
             $ratingComment.css('border-color', '');
+        }
+        
+        // New functions for handling user ratings and storage
+        function checkExistingRating() {
+            var userRating = getUserRating();
+            if (userRating) {
+                showAlreadyRatedSection(userRating);
+            }
+        }
+        
+        function hasUserAlreadyRated(email) {
+            var ratings = getAllRatings();
+            return ratings.some(rating => rating.email === email);
+        }
+        
+        function storeUserRating(reviewData) {
+            // Store individual user rating for this device
+            localStorage.setItem('userRating', JSON.stringify(reviewData));
+            
+            // Store in collection of all ratings
+            var allRatings = getAllRatings();
+            allRatings.push(reviewData);
+            localStorage.setItem('allRatings', JSON.stringify(allRatings));
+        }
+        
+        function getUserRating() {
+            var userRating = localStorage.getItem('userRating');
+            return userRating ? JSON.parse(userRating) : null;
+        }
+        
+        function getAllRatings() {
+            var ratings = localStorage.getItem('allRatings');
+            return ratings ? JSON.parse(ratings) : [];
+        }
+        
+        function showAlreadyRatedSection(userRating) {
+            // Hide rating form and show already rated message
+            $ratingFormSection.hide();
+            $alreadyRatedSection.show();
+            
+            // Display user's rating
+            var $userStars = $('.user-stars');
+            $userStars.empty();
+            
+            for (var i = 1; i <= 5; i++) {
+                var starClass = i <= userRating.rating ? 'star' : 'star empty';
+                $userStars.append(`<span class="${starClass}">★</span>`);
+            }
+            
+            // Display date
+            var ratingDate = new Date(userRating.date);
+            $('#user-rating-date').text(ratingDate.toLocaleDateString());
+        }
+        
+        function loadExistingReviews() {
+            var allRatings = getAllRatings();
+            
+            if (allRatings.length === 0) {
+                // Show no reviews message
+                $liveReviewsContainer.html(`
+                    <div class="no-reviews">
+                        <i class="fas fa-comments"></i>
+                        <p>No reviews yet. Be the first to share your experience!</p>
+                    </div>
+                `);
+            } else {
+                // Display existing reviews
+                allRatings.slice(-5).reverse().forEach(function(review, index) {
+                    setTimeout(function() {
+                        addReviewToDisplay(review);
+                    }, index * 200);
+                });
+            }
+        }
+        
+        function addReviewToDisplay(reviewData) {
+            // Remove no reviews message if it exists
+            $liveReviewsContainer.find('.no-reviews').remove();
+            
+            var reviewDate = new Date(reviewData.date);
+            var initials = reviewData.name.split(' ').map(n => n[0]).join('').toUpperCase();
+            var serviceName = $ratingService.find(`option[value="${reviewData.service}"]`).text() || reviewData.service;
+            
+            // Generate stars HTML
+            var starsHtml = '';
+            for (var i = 1; i <= 5; i++) {
+                var starClass = i <= reviewData.rating ? 'star' : 'star empty';
+                starsHtml += `<span class="${starClass}">★</span>`;
+            }
+            
+            var reviewHtml = `
+                <div class="review-item">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">${initials}</div>
+                            <div class="reviewer-details">
+                                <h5>${reviewData.name}</h5>
+                                <p class="service-used">${serviceName}</p>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ${starsHtml}
+                        </div>
+                    </div>
+                    <div class="review-text">${reviewData.comment}</div>
+                    <div class="review-date">${reviewDate.toLocaleDateString()}</div>
+                </div>
+            `;
+            
+            $liveReviewsContainer.prepend(reviewHtml);
+            
+            // Limit to 10 reviews max
+            var reviews = $liveReviewsContainer.find('.review-item');
+            if (reviews.length > 10) {
+                reviews.last().remove();
+            }
         }
         
         function updateRatingStats() {
