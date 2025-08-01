@@ -1,51 +1,53 @@
 $(document).ready(function(){
-    // Enhanced Loading Animation with improved mobile support
+    // Impressive Loading Animation with Dynamic Effects
     function initLoader() {
         var $progressFill = $('.progress-fill');
-        var $progressGlow = $('.progress-glow');
         var $progressPercentage = $('.progress-percentage');
-        var $loader = $('#loader');
         var $statusText = $('.status-text');
+        var $loader = $('#loader');
         
         var progress = 0;
-        var loadingMessages = [
+        var isMobile = window.innerWidth <= 768;
+        
+        // Dynamic status messages with cybersecurity theme
+        var messages = [
             'Initializing Security Protocols...',
-            'Scanning Network Infrastructure...',
-            'Establishing Encrypted Connections...',
+            'Scanning Network Perimeter...',
+            'Establishing Encrypted Tunnels...',
             'Verifying Digital Certificates...',
-            'Deploying Security Measures...',
+            'Deploying Threat Detection...',
             'Loading Security Dashboard...',
             'Finalizing Secure Environment...'
         ];
         
         var messageIndex = 0;
         
-        // Enhanced progress animation with better easing
-        function updateProgress(targetProgress, duration) {
+        // Enhanced progress animation with better performance
+        function updateProgress(targetProgress) {
             return new Promise((resolve) => {
+                var duration = isMobile ? 400 : 600;
                 var startProgress = progress;
                 var startTime = Date.now();
                 
                 function animate() {
                     var elapsed = Date.now() - startTime;
-                    var progressRatio = Math.min(elapsed / duration, 1);
+                    var ratio = Math.min(elapsed / duration, 1);
                     
-                    // Improved easing function for smoother animation
-                    var easedProgress = startProgress + (targetProgress - startProgress) * easeOutCubic(progressRatio);
-                    progress = easedProgress;
+                    // Smooth easing function
+                    var easedRatio = 1 - Math.pow(1 - ratio, 3); // easeOutCubic
+                    progress = startProgress + (targetProgress - startProgress) * easedRatio;
                     
-                    // Update progress bar with enhanced visual feedback
-                    $progressFill.css('width', progress + '%');
-                    $progressGlow.css('width', progress + '%');
+                    // Use transform for better performance
+                    $progressFill.css('transform', `scaleX(${progress / 100})`);
                     $progressPercentage.text(Math.round(progress) + '%');
                     
-                    // Add subtle bounce effect at milestones
-                    if (Math.round(progress) % 25 === 0 && Math.round(progress) > 0) {
-                        $progressPercentage.addClass('milestone-bounce');
-                        setTimeout(() => $progressPercentage.removeClass('milestone-bounce'), 300);
+                    // Add milestone effects
+                    if (Math.round(progress) % 25 === 0 && Math.round(progress) > 0 && Math.round(progress) < 100) {
+                        $progressPercentage.addClass('milestone-glow');
+                        setTimeout(() => $progressPercentage.removeClass('milestone-glow'), 600);
                     }
                     
-                    if (progressRatio < 1) {
+                    if (ratio < 1) {
                         requestAnimationFrame(animate);
                     } else {
                         resolve();
@@ -56,157 +58,150 @@ $(document).ready(function(){
             });
         }
         
-        // Enhanced easing functions
-        function easeOutCubic(t) {
-            return 1 - Math.pow(1 - t, 3);
-        }
-        
-        function easeInOutQuart(t) {
-            return t < 0.5 ? 8 * t * t * t * t : 1 - Math.pow(-2 * t + 2, 4) / 2;
-        }
-        
-        // Enhanced message update with typing effect
-        function updateMessage(index) {
-            if (index < loadingMessages.length) {
-                $statusText.fadeOut(200, function() {
-                    var message = loadingMessages[index];
-                    var $this = $(this);
-                    $this.text('').fadeIn(200);
-                    
-                    // Typing effect
-                    var i = 0;
-                    function typeMessage() {
-                        if (i < message.length) {
-                            $this.text(message.substring(0, i + 1));
-                            i++;
-                            setTimeout(typeMessage, 30);
-                        }
+        // Dynamic message update with typing effect
+        function updateMessage() {
+            if (messageIndex < messages.length) {
+                var message = messages[messageIndex];
+                var currentText = '';
+                var charIndex = 0;
+                
+                // Clear current text
+                $statusText.text('');
+                
+                // Typing animation
+                function typeChar() {
+                    if (charIndex < message.length) {
+                        currentText += message[charIndex];
+                        $statusText.text(currentText);
+                        charIndex++;
+                        setTimeout(typeChar, isMobile ? 30 : 20);
                     }
-                    typeMessage();
-                });
+                }
+                
+                typeChar();
+                messageIndex++;
             }
         }
         
-        // Enhanced loading sequence with better timing
+        // Enhanced loading sequence with dynamic timing
         async function loadingSequence() {
-            // Initial delay for dramatic effect
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Initial delay with dramatic entry
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 500 : 800));
             
             // Phase 1: Initialize (0-15%)
-            updateMessage(0);
-            await updateProgress(15, 1200);
-            await new Promise(resolve => setTimeout(resolve, 600));
+            updateMessage();
+            await updateProgress(15);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 300 : 500));
             
-            // Phase 2: Scanning (15-30%)
-            updateMessage(1);
-            await updateProgress(30, 1000);
-            await new Promise(resolve => setTimeout(resolve, 500));
+            // Phase 2: Scanning (15-35%)
+            updateMessage();
+            await updateProgress(35);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 300 : 500));
             
-            // Phase 3: Connecting (30-50%)
-            updateMessage(2);
-            await updateProgress(50, 1100);
-            await new Promise(resolve => setTimeout(resolve, 500));
+            // Phase 3: Connecting (35-55%)
+            updateMessage();
+            await updateProgress(55);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 300 : 400));
             
-            // Phase 4: Verifying (50-70%)
-            updateMessage(3);
-            await updateProgress(70, 900);
-            await new Promise(resolve => setTimeout(resolve, 400));
+            // Phase 4: Verifying (55-75%)
+            updateMessage();
+            await updateProgress(75);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 300 : 400));
             
-            // Phase 5: Deploying (70-85%)
-            updateMessage(4);
-            await updateProgress(85, 800);
-            await new Promise(resolve => setTimeout(resolve, 400));
+            // Phase 5: Deploying (75-90%)
+            updateMessage();
+            await updateProgress(90);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 300 : 400));
             
-            // Phase 6: Loading (85-95%)
-            updateMessage(5);
-            await updateProgress(95, 700);
-            await new Promise(resolve => setTimeout(resolve, 400));
+            // Phase 6: Loading (90-98%)
+            updateMessage();
+            await updateProgress(98);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 200 : 300));
             
-            // Phase 7: Finalizing (95-100%)
-            updateMessage(6);
-            await updateProgress(100, 600);
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            // Phase 7: Finalizing (98-100%)
+            updateMessage();
+            await updateProgress(100);
+            await new Promise(resolve => setTimeout(resolve, isMobile ? 400 : 600));
             
-            // Enhanced loader hiding with multiple transition effects
-            $statusText.fadeOut(400, function() {
-                $(this).text('Welcome to DarkHolds Security').fadeIn(400);
-            });
-            
-            await new Promise(resolve => setTimeout(resolve, 600));
-            
-            // Add completion effects
+            // Completion message with effect
+            $statusText.text('Security Environment Ready!');
             $progressPercentage.addClass('completion-glow');
-            $loader.addClass('completion-ready');
             
             await new Promise(resolve => setTimeout(resolve, 400));
             
-            // Hide loader with enhanced animation sequence
+            // Hide loader with enhanced transition
             $loader.addClass('hidden');
             
-            // Remove loader from DOM after animation with cleanup
+            // Clean up and trigger events
             setTimeout(() => {
                 $loader.remove();
-                
-                // Trigger completion events
                 $(document).trigger('loaderComplete');
                 
-                // Enhanced tracking with more data
+                // Analytics tracking
                 if (typeof gtag !== 'undefined') {
                     gtag('event', 'loader_complete', {
                         'event_category': 'User Experience',
-                        'event_label': 'enhanced_loader_animation',
+                        'event_label': 'impressive_loader',
                         'value': Math.round(Date.now() - startTime)
                     });
                 }
                 
-                // Trigger viewport-based animations
+                // Trigger scroll to activate other animations
                 $(window).trigger('scroll');
-                
-                // Initialize lazy loading for better performance
-                if ('IntersectionObserver' in window) {
-                    initLazyLoading();
-                }
-                
-            }, 1200); // Increased time for smoother transition
+            }, 800);
         }
         
         // Store start time for analytics
         var startTime = Date.now();
         
-        // Start the enhanced loading sequence
-        loadingSequence();
-        
-        // Enhanced particle system for better performance on mobile
-        function initParticleSystem() {
-            var isMobile = window.innerWidth <= 768;
-            var particleCount = isMobile ? 6 : 10;
-            var $particles = $('.particles');
-            
-            // Remove existing particles
-            $particles.empty();
-            
-            // Create optimized particles
-            for (var i = 0; i < particleCount; i++) {
-                var $particle = $('<div class="particle"></div>');
-                var delay = Math.random() * 3;
-                var duration = 6 + Math.random() * 3;
-                var left = 10 + (i * (80 / particleCount)) + Math.random() * 10;
+        // Add CSS for milestone and completion effects
+        if (!document.getElementById('loader-effects-styles')) {
+            var style = document.createElement('style');
+            style.id = 'loader-effects-styles';
+            style.textContent = `
+                .milestone-glow {
+                    animation: milestoneGlow 0.6s ease-out;
+                }
                 
-                $particle.css({
-                    'left': left + '%',
-                    'animation-delay': delay + 's',
-                    'animation-duration': duration + 's'
-                });
+                @keyframes milestoneGlow {
+                    0% { 
+                        transform: scale(1);
+                        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    }
+                    50% { 
+                        transform: scale(1.1);
+                        text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+                    }
+                    100% { 
+                        transform: scale(1);
+                        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    }
+                }
                 
-                $particles.append($particle);
-            }
+                .completion-glow {
+                    animation: completionGlow 1s ease-out;
+                }
+                
+                @keyframes completionGlow {
+                    0% { 
+                        transform: scale(1);
+                        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+                    }
+                    50% { 
+                        transform: scale(1.2);
+                        text-shadow: 0 0 30px rgba(255, 215, 0, 1);
+                    }
+                    100% { 
+                        transform: scale(1);
+                        text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
         }
         
-        // Initialize particle system
-        initParticleSystem();
-        
-        // Responsive particle adjustment
-        $(window).on('resize', debounce(initParticleSystem, 250));
+        // Start the impressive loading sequence
+        loadingSequence();
         
         // Add click to skip loader (for development/testing)
         $loader.on('click', function(e) {
@@ -215,43 +210,12 @@ $(document).ready(function(){
                 setTimeout(() => {
                     $loader.remove();
                     $(document).trigger('loaderComplete');
-                }, 1200);
+                }, 800);
             }
         });
     }
     
-    // Utility function for debouncing
-    function debounce(func, wait) {
-        var timeout;
-        return function executedFunction(...args) {
-            var later = function() {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
-    }
-    
-    // Lazy loading initialization for performance
-    function initLazyLoading() {
-        var imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    var img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
-                }
-            });
-        });
-        
-        document.querySelectorAll('img[data-src]').forEach(img => {
-            imageObserver.observe(img);
-        });
-    }
-    
-    // Initialize the enhanced loader
+    // Initialize the impressive loader
     initLoader();
     
     // Theme Toggle Functionality
