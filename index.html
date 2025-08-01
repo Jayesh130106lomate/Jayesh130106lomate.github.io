@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkHolds - Professional Cybersecurity Solutions & Penetration Testing</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="DarkHolds provides professional cybersecurity solutions, penetration testing, vulnerability assessments, and digital security consulting. Protect your business with expert cybersecurity services.">
+    <meta name="keywords" content="cybersecurity, penetration testing, vulnerability assessment, network security, digital forensics, security consulting, ethical hacking, cyber defense">
+    <meta name="author" content="DarkHolds Cybersecurity">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="DarkHolds - Professional Cybersecurity Solutions">
+    <meta property="og:description" content="Expert cybersecurity services including penetration testing, vulnerability assessments, and security consulting to protect your digital assets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://darkholds.com">
+    <meta property="og:image" content="https://darkholds.com/images/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DarkHolds - Professional Cybersecurity Solutions">
+    <meta name="twitter:description" content="Expert cybersecurity services to protect your digital assets and business infrastructure.">
+    <meta name="twitter:image" content="https://darkholds.com/images/twitter-card.jpg">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DarkHolds",
+        "description": "Professional cybersecurity solutions and penetration testing services",
+        "url": "https://darkholds.com",
+        "logo": "https://darkholds.com/images/logo.png",
+        "sameAs": [
+            "https://twitter.com/darkholds",
+            "https://linkedin.com/company/darkholds",
+            "https://github.com/darkholds"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-555-SECURITY",
+            "contactType": "customer service",
+            "email": "contact@darkholds.com"
+        },
+        "service": [
+            {
+                "@type": "Service",
+                "name": "Penetration Testing",
+                "description": "Comprehensive security testing to identify vulnerabilities"
+            },
+            {
+                "@type": "Service", 
+                "name": "Vulnerability Assessment",
+                "description": "Systematic evaluation of security weaknesses"
+            }
+        ]
+    }
+    </script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_TRACKING_ID');
+        
+        // Track custom events
+        function trackEvent(action, category, label) {
+            gtag('event', action, {
+                'event_category': category,
+                'event_label': label
+            });
+        }
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23001122'/%3E%3Cpath d='M50 15L65 35L85 35L70 50L75 70L50 60L25 70L30 50L15 35L35 35Z' fill='%23FFD700'/%3E%3C/svg%3E">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg viewBox="0 0 100 100" width="80" height="80">
+                    <circle cx="50" cy="50" r="48" fill="#001122"/>
+                    <path d="M50 15L65 35L85 35L70 50L75 70L50 60L25 70L30 50L15 35L35 35Z" fill="#FFD700"/>
+                </svg>
+            </div>
+            <div class="loader-text">
+                <h3>DarkHolds</h3>
+                <p>Securing Your Digital World</p>
+            </div>
+            <div class="loader-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Toggle Button -->
+    <div class="theme-toggle" title="Toggle Dark/Light Mode">
+        <i class="fas fa-sun"></i>
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget">
+        <div class="chat-toggle" title="Live Chat Support">
+            <i class="fas fa-comments"></i>
+            <span class="chat-notification">1</span>
+        </div>
+        <div class="chat-window">
+            <div class="chat-header">
+                <div class="chat-agent">
+                    <div class="agent-avatar">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <div class="agent-info">
+                        <h4>Security Specialist</h4>
+                        <span class="status online">Online</span>
+                    </div>
+                </div>
+                <button class="chat-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chat-messages">
+                <div class="message agent-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hello! I'm here to help with your cybersecurity needs. How can I assist you today?</p>
+                        <span class="message-time">Just now</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="Type your message...">
+                <button class="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scroll-up-btn">
+        <i class="fas fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="#">
+                    <div class="logo-container">
+                        <div class="logo-circle">
+                            <svg viewBox="0 0 100 100" class="logo-svg">
+                                <defs>
+                                    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                        <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#0a1628;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#1a2738;stop-opacity:1" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- Outer circle with gradient -->
+                                <circle cx="50" cy="50" r="48" fill="url(#circleGradient)" stroke="#FFD700" stroke-width="2"/>
+                                <!-- Inner shield shape -->
+                                <path d="M50 15 L35 25 L35 45 C35 65 50 85 50 85 C50 85 65 65 65 45 L65 25 Z" fill="url(#shieldGradient)" opacity="0.9"/>
+                                <!-- Eagle head silhouette -->
+                                <path d="M50 20 L45 30 L42 35 L45 40 L50 45 L55 40 L58 35 L55 30 Z" fill="#0a1628"/>
+                                <!-- Eagle beak -->
+                                <path d="M50 35 L52 38 L50 40 Z" fill="#FFD700"/>
+                                <!-- Circuit pattern -->
+                                <g opacity="0.6" stroke="#00BFFF" stroke-width="0.5" fill="none">
+                                    <path d="M20 50 L30 50 L30 40 L40 40"/>
+                                    <path d="M80 50 L70 50 L70 60 L60 60"/>
+                                    <path d="M50 20 L50 30"/>
+                                    <path d="M50 70 L50 80"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <span class="logo-text">Dark<span class="logo-accent">Holds</span></span>
+                    </div>
+                </a>
+            </div>
+            <ul class="menu">
+                <li><a href="#home" class="menu-item active">Home</a></li>
+                <li><a href="#about" class="menu-item">About</a></li>
+                <li><a href="#services" class="menu-item">Services</a></li>
+                <li><a href="#skills" class="menu-item">Skills</a></li>
+                <li><a href="#teams" class="menu-item">Reviews</a></li>
+                <li><a href="#blog" class="menu-item">Blog</a></li>
+                <li><a href="#contact" class="menu-item">Contact</a></li>
+            </ul>
+            
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    </nav>
+
+    <!-- home section start -->
+    <section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">Jayesh Lomate</div>
+                <div class="text-3">And I'm a <span class="typing"></span></div>
+                <a href="#">Hire me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section start -->
+    <section class="about" id="about">
+        <div class="max-width">
+            <h2 class="title">About me</h2>
+            <div class="about-content">
+                <div class="column left">
+                    <div class="profile-card">
+                        <div class="profile-image">
+                            <img src="images/profile-1.jpeg" alt="Jayesh Lomate - DarkHolds Cybersecurity Expert">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Cybersecurity Expert</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>5+ Years Experience</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Available Worldwide</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="about-text">
+                        <div class="text">I'm <span class="highlight-name">DarkHolds</span> and I'm a <span class="typing-2"></span></div>
+                        <p class="description">
+                            Passionate cybersecurity expert and full-stack developer with extensive experience in penetration testing, 
+                            secure application development, and digital forensics. I specialize in identifying vulnerabilities and 
+                            creating robust security solutions that protect organizations from evolving cyber threats.
+                        </p>
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h4>Cybersecurity</h4>
+                                    <p>Advanced threat detection and prevention</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h4>Development</h4>
+                                    <p>Secure full-stack applications</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h4>Penetration Testing</h4>
+                                    <p>Comprehensive security assessments</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <div class="expertise-content">
+                                    <h4>Digital Forensics</h4>
+                                    <p>Evidence analysis and recovery</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn-primary">Download CV</a>
+                            <a href="#contact" class="btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- services section start -->
+    <section class="services" id="services">
+        <div class="max-width">
+            <h2 class="title">My services</h2>
+            <div class="services-container">
+                <div class="service-card featured">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-badge">Popular</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Penetration Testing</h3>
+                        <p>Comprehensive security assessments to identify vulnerabilities in your infrastructure, applications, and networks before malicious actors do.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Network Security Testing</li>
+                            <li><i class="fas fa-check"></i> Web Application Security</li>
+                            <li><i class="fas fa-check"></i> Social Engineering Tests</li>
+                            <li><i class="fas fa-check"></i> Detailed Reports & Remediation</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$2500</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Secure Development</h3>
+                        <p>Building robust, secure applications with security-first approach from architecture to deployment.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Secure Code Review</li>
+                            <li><i class="fas fa-check"></i> Security Architecture</li>
+                            <li><i class="fas fa-check"></i> DevSecOps Integration</li>
+                            <li><i class="fas fa-check"></i> Compliance Implementation</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$1800</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Digital Forensics</h3>
+                        <p>Professional incident response and digital evidence analysis for cybersecurity incidents and legal proceedings.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Incident Response</li>
+                            <li><i class="fas fa-check"></i> Malware Analysis</li>
+                            <li><i class="fas fa-check"></i> Data Recovery</li>
+                            <li><i class="fas fa-check"></i> Expert Testimony</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$3000</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Security Training</h3>
+                        <p>Comprehensive cybersecurity training programs for teams and individuals to build security awareness.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Security Awareness Training</li>
+                            <li><i class="fas fa-check"></i> Technical Security Training</li>
+                            <li><i class="fas fa-check"></i> Phishing Simulations</li>
+                            <li><i class="fas fa-check"></i> Custom Workshops</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$1200</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Security Consulting</h3>
+                        <p>Strategic cybersecurity consulting to align your security posture with business objectives and compliance requirements.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Risk Assessment</li>
+                            <li><i class="fas fa-check"></i> Compliance Consulting</li>
+                            <li><i class="fas fa-check"></i> Security Strategy</li>
+                            <li><i class="fas fa-check"></i> Policy Development</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$2000</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Cloud Security</h3>
+                        <p>Comprehensive cloud security solutions for AWS, Azure, and GCP environments with continuous monitoring.</p>
+                        <ul class="service-features">
+                            <li><i class="fas fa-check"></i> Cloud Security Assessment</li>
+                            <li><i class="fas fa-check"></i> Configuration Review</li>
+                            <li><i class="fas fa-check"></i> Compliance Monitoring</li>
+                            <li><i class="fas fa-check"></i> 24/7 Security Monitoring</li>
+                        </ul>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-price">Starting at <span>$2200</span></div>
+                        <a href="#contact" class="service-btn">Get Quote</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section start -->
+    <section class="skills" id="skills">
+        <div class="max-width">
+            <h2 class="title">My skills</h2>
+            <div class="skills-content">
+                <div class="column left">
+                    <div class="skills-text">
+                        <div class="text">My Professional Skills & Expertise</div>
+                        <p class="skills-description">
+                            With over 5 years of experience in cybersecurity and development, I've mastered a comprehensive 
+                            range of technologies and methodologies. My expertise spans from advanced penetration testing 
+                            techniques to secure application development, ensuring robust digital protection.
+                        </p>
+                        <div class="achievements">
+                            <div class="achievement-item">
+                                <div class="achievement-number">150+</div>
+                                <div class="achievement-label">Security Assessments</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number">50+</div>
+                                <div class="achievement-label">Projects Completed</div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-number">98%</div>
+                                <div class="achievement-label">Client Satisfaction</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-outline">View Certifications</a>
+                    </div>
+                </div>
+                <div class="column right">
+                    <div class="skills-bars">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fas fa-shield-alt skill-icon"></i>
+                                    <span class="skill-name">Penetration Testing</span>
+                                </div>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress penetration" data-width="95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fab fa-python skill-icon"></i>
+                                    <span class="skill-name">Python & Security Tools</span>
+                                </div>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress python" data-width="90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fab fa-js-square skill-icon"></i>
+                                    <span class="skill-name">JavaScript & Frameworks</span>
+                                </div>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress javascript" data-width="85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fas fa-network-wired skill-icon"></i>
+                                    <span class="skill-name">Network Security</span>
+                                </div>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress network" data-width="88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fas fa-database skill-icon"></i>
+                                    <span class="skill-name">Database Security</span>
+                                </div>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress database" data-width="82%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-info">
+                                    <i class="fas fa-cloud skill-icon"></i>
+                                    <span class="skill-name">Cloud Security</span>
+                                </div>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress cloud" data-width="78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- teams section start -->
+    <section class="teams" id="teams">
+        <div class="max-width">
+            <h2 class="title">Client Testimonials</h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "DarkHolds conducted an exceptional penetration test for our e-commerce platform. Their detailed reports and professional approach helped us secure our infrastructure before going live."
+                        </p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/profile-1.jpeg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>CTO, TechCorp Solutions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Outstanding security consulting services. DarkHolds helped us achieve SOC 2 compliance and implemented robust security protocols across our organization."
+                        </p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/profile-2.jpeg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>CISO, Financial Corp</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Professional, thorough, and incredibly knowledgeable. The incident response service saved our company from a major security breach."
+                        </p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/profile-3.jpeg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emily Rodriguez</h4>
+                            <span>CEO, StartupXYZ</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Excellent cloud security implementation. DarkHolds transformed our AWS infrastructure security and provided comprehensive monitoring solutions."
+                        </p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/profile-4.jpeg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>David Park</h4>
+                            <span>DevOps Lead, CloudTech</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "The security training program was exceptional. Our team's security awareness improved dramatically, and the practical exercises were very valuable."
+                        </p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="images/profile-5.jpeg" alt="Client">
+                        </div>
+                        <div class="author-info">
+                            <h4>Lisa Thompson</h4>
+                            <span>HR Director, GlobalTech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Certifications Section -->
+            <div class="certifications-section">
+                <h3 class="section-subtitle">Professional Certifications</h3>
+                <div class="certifications-grid">
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <span>CISSP</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <span>CEH</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <span>OSCP</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <span>AWS Security</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <span>GCIH</span>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-badge">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <span>CISM</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+        <div class="max-width">
+            <h2 class="title">Contact me</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-header">
+                        <h3>Let's Connect & Secure Your Digital Future</h3>
+                        <p>Ready to fortify your cybersecurity? Get in touch for a consultation and let's discuss how DarkHolds can protect your organization from evolving cyber threats.</p>
+                    </div>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email Address</h4>
+                                <span>contact@darkholds.com</span>
+                                <small>Response within 24 hours</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <span>+1 (555) 123-4567</span>
+                                <small>Mon-Fri, 9AM-6PM EST</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Location</h4>
+                                <span>Global Remote Services</span>
+                                <small>Serving clients worldwide</small>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Emergency Response</h4>
+                                <span>24/7 Available</span>
+                                <small>Critical security incidents</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow & Connect</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-github"></i>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fab fa-twitter"></i>
+                                <span>Twitter</span>
+                            </a>
+                            <a href="#" class="social-icon">
+                                <i class="fas fa-blog"></i>
+                                <span>Blog</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h3>Send a Message</h3>
+                        <p>Describe your security needs and we'll get back to you with a customized solution.</p>
+                    </div>
+                    
+                    <form class="contact-form" action="#" method="POST">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <div class="input-highlight"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="input-highlight"></div>
+                            </div>
+                            <div class="input-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                                <div class="input-highlight"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="company">Company/Organization</label>
+                            <input type="text" id="company" name="company">
+                            <div class="input-highlight"></div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="service">Service Interest *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="penetration-testing">Penetration Testing</option>
+                                <option value="security-consulting">Security Consulting</option>
+                                <option value="incident-response">Incident Response</option>
+                                <option value="security-training">Security Training</option>
+                                <option value="secure-development">Secure Development</option>
+                                <option value="cloud-security">Cloud Security</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="input-highlight"></div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Describe your security requirements, timeline, and any specific concerns..." required></textarea>
+                            <div class="input-highlight"></div>
+                        </div>
+                        
+                        <div class="form-footer">
+                            <div class="privacy-note">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Your information is encrypted and secure. We respect your privacy.</span>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span class="btn-text">Send Secure Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- rating section start -->
+    <section class="rating" id="rating">
+        <div class="max-width">
+            <h2 class="title">Rate Our Service</h2>
+            <div class="rating-content">
+                <div class="rating-left">
+                    <div class="rating-intro">
+                        <h3>Share Your Experience</h3>
+                        <p>Your feedback helps us improve our cybersecurity services and assists other clients in making informed decisions. Please take a moment to rate your experience with DarkHolds.</p>
+                        
+                        <div class="rating-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Trusted by 500+ Clients</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8/5 Average Rating</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>127 Happy Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rating-right">
+                    <div class="rating-card">
+                        <div class="rating-header">
+                            <div class="rating-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h3>Rate Your Experience</h3>
+                            <p>How would you rate our cybersecurity services?</p>
+                        </div>
+                        
+                        <div class="rating-stars-container">
+                            <div class="rating-stars">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <div class="rating-text">
+                                <span class="rating-value">0</span> out of 5 stars
+                            </div>
+                            <div class="rating-labels">
+                                <span class="rating-label" data-rating="1">Poor</span>
+                                <span class="rating-label" data-rating="2">Fair</span>
+                                <span class="rating-label" data-rating="3">Good</span>
+                                <span class="rating-label" data-rating="4">Very Good</span>
+                                <span class="rating-label" data-rating="5">Excellent</span>
+                            </div>
+                        </div>
+                        
+                        <div class="rating-form">
+                            <div class="form-group">
+                                <label for="rating-name">Your Name</label>
+                                <input type="text" id="rating-name" class="rating-input" placeholder="Enter your name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rating-service">Service Used</label>
+                                <select id="rating-service" class="rating-select">
+                                    <option value="">Select service</option>
+                                    <option value="penetration-testing">Penetration Testing</option>
+                                    <option value="vulnerability-assessment">Vulnerability Assessment</option>
+                                    <option value="security-consulting">Security Consulting</option>
+                                    <option value="incident-response">Incident Response</option>
+                                    <option value="security-training">Security Training</option>
+                                    <option value="compliance-audit">Compliance Auditing</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="rating-comment">Your Review</label>
+                                <textarea id="rating-comment" class="rating-comment" placeholder="Share your detailed experience with our cybersecurity services..." rows="4"></textarea>
+                                <div class="char-count">
+                                    <span class="current-chars">0</span>/<span class="max-chars">500</span> characters
+                                </div>
+                            </div>
+                            
+                            <button class="rating-submit">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Submit Review</span>
+                            </button>
+                        </div>
+                        
+                        <div class="rating-stats">
+                            <div class="stat-item">
+                                <div class="stat-circle">
+                                    <span class="stat-number">4.8</span>
+                                </div>
+                                <span class="stat-label">Average Rating</span>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-circle">
+                                    <span class="stat-number">127</span>
+                                </div>
+                                <span class="stat-label">Total Reviews</span>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-circle">
+                                    <span class="stat-number">98%</span>
+                                </div>
+                                <span class="stat-label">Satisfaction</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- blog section start -->
+    <section class="blog" id="blog">
+        <div class="max-width">
+            <h2 class="title">Latest Blog Posts</h2>
+            <div class="blog-content">
+                <div class="blog-filters">
+                    <button class="filter-btn active" data-filter="all">All Posts</button>
+                    <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
+                    <button class="filter-btn" data-filter="penetration">Penetration Testing</button>
+                    <button class="filter-btn" data-filter="tips">Security Tips</button>
+                    <button class="filter-btn" data-filter="news">Industry News</button>
+                </div>
+                
+                <div class="blog-grid">
+                    <article class="blog-card" data-category="cybersecurity">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1563206767-5b18f218e8de?w=400&h=250&fit=crop" alt="Advanced Threat Detection">
+                            <div class="blog-date">
+                                <span class="day">28</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Cybersecurity</span>
+                                <span class="read-time">5 min read</span>
+                            </div>
+                            <h3 class="blog-title">Advanced Threat Detection Strategies for 2025</h3>
+                            <p class="blog-excerpt">Discover the latest methodologies and tools for identifying sophisticated cyber threats in modern enterprise environments...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-user-secret"></i>
+                                    </div>
+                                    <span>Security Analyst</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="penetration">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?w=400&h=250&fit=crop" alt="Ethical Hacking Guide">
+                            <div class="blog-date">
+                                <span class="day">25</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Penetration Testing</span>
+                                <span class="read-time">8 min read</span>
+                            </div>
+                            <h3 class="blog-title">Complete Guide to Ethical Hacking Methodologies</h3>
+                            <p class="blog-excerpt">Learn the systematic approach to penetration testing and vulnerability assessment used by professional security experts...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <span>Penetration Tester</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="tips">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop" alt="Security Best Practices">
+                            <div class="blog-date">
+                                <span class="day">22</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Security Tips</span>
+                                <span class="read-time">6 min read</span>
+                            </div>
+                            <h3 class="blog-title">10 Essential Security Practices for Small Businesses</h3>
+                            <p class="blog-excerpt">Practical cybersecurity measures that every small business can implement to protect against common cyber threats...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <span>Security Consultant</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="news">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop" alt="Cybersecurity Trends">
+                            <div class="blog-date">
+                                <span class="day">20</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Industry News</span>
+                                <span class="read-time">4 min read</span>
+                            </div>
+                            <h3 class="blog-title">Emerging Cybersecurity Trends and Predictions</h3>
+                            <p class="blog-excerpt">Stay ahead of the curve with insights into the latest cybersecurity trends and what to expect in the coming year...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <span>Industry Expert</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="cybersecurity">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=400&h=250&fit=crop" alt="Zero Trust Architecture">
+                            <div class="blog-date">
+                                <span class="day">18</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Cybersecurity</span>
+                                <span class="read-time">7 min read</span>
+                            </div>
+                            <h3 class="blog-title">Implementing Zero Trust Architecture in Modern Networks</h3>
+                            <p class="blog-excerpt">A comprehensive guide to understanding and implementing zero trust security principles in enterprise environments...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-network-wired"></i>
+                                    </div>
+                                    <span>Network Security Expert</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="blog-card" data-category="tips">
+                        <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop" alt="Password Security">
+                            <div class="blog-date">
+                                <span class="day">15</span>
+                                <span class="month">Jul</span>
+                            </div>
+                        </div>
+                        <div class="blog-content-area">
+                            <div class="blog-meta">
+                                <span class="category">Security Tips</span>
+                                <span class="read-time">3 min read</span>
+                            </div>
+                            <h3 class="blog-title">Password Security: Beyond Complex Requirements</h3>
+                            <p class="blog-excerpt">Modern approaches to password security including passkeys, multi-factor authentication, and password manager best practices...</p>
+                            <div class="blog-footer">
+                                <div class="author">
+                                    <div class="author-avatar">
+                                        <i class="fas fa-key"></i>
+                                    </div>
+                                    <span>Security Researcher</span>
+                                </div>
+                                <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="blog-pagination">
+                    <button class="pagination-btn prev" disabled>
+                        <i class="fas fa-chevron-left"></i> Previous
+                    </button>
+                    <div class="pagination-numbers">
+                        <span class="page-number active">1</span>
+                        <span class="page-number">2</span>
+                        <span class="page-number">3</span>
+                        <span class="pagination-dots">...</span>
+                        <span class="page-number">8</span>
+                    </div>
+                    <button class="pagination-btn next">
+                        Next <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section start -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about-section">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <div class="logo-circle">
+                            <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="footerEagleGradient" cx="50%" cy="30%" r="70%">
+                                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                                        <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#FF6347;stop-opacity:1" />
+                                    </radialGradient>
+                                </defs>
+                                
+                                <!-- Shield Background -->
+                                <path d="M50 10 L75 25 L75 65 C75 75 65 85 50 90 C35 85 25 75 25 65 L25 25 Z" 
+                                      fill="url(#footerEagleGradient)" stroke="#0a1628" stroke-width="2"/>
+                                
+                                <!-- Eagle Design -->
+                                <path d="M50 20 C45 25 40 30 35 35 L50 45 L65 35 C60 30 55 25 50 20 Z" 
+                                      fill="#0a1628" opacity="0.8"/>
+                                <circle cx="45" cy="30" r="2" fill="#FFD700"/>
+                                <circle cx="55" cy="30" r="2" fill="#FFD700"/>
+                                <path d="M50 35 L45 40 L50 42 L55 40 Z" fill="#0a1628"/>
+                                
+                                <!-- Cyber Elements -->
+                                <rect x="20" y="70" width="8" height="2" fill="#00BFFF" opacity="0.7"/>
+                                <rect x="30" y="73" width="6" height="2" fill="#00BFFF" opacity="0.7"/>
+                                <rect x="72" y="70" width="8" height="2" fill="#00BFFF" opacity="0.7"/>
+                                <rect x="64" y="73" width="6" height="2" fill="#00BFFF" opacity="0.7"/>
+                            </svg>
+                        </div>
+                        <span class="footer-logo-text">Dark<span class="logo-highlight">Holds</span></span>
+                    </div>
+                </div>
+                <p class="footer-description">
+                    Professional cybersecurity services and penetration testing solutions. 
+                    Protecting your digital assets with cutting-edge security expertise.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section links-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#teams">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section services-section">
+                <h3>Services</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Penetration Testing</a></li>
+                    <li><a href="#">Vulnerability Assessment</a></li>
+                    <li><a href="#">Security Consulting</a></li>
+                    <li><a href="#">Incident Response</a></li>
+                    <li><a href="#">Security Training</a></li>
+                    <li><a href="#">Compliance Auditing</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-section">
+                <h3>Get In Touch</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>contact@darkholds.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New York, NY 10001</span>
+                    </div>
+                </div>
+                
+                <div class="newsletter">
+                    <h4>Security Newsletter</h4>
+                    <p>Stay updated with latest cybersecurity trends</p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Your email address" class="newsletter-input">
+                        <button class="newsletter-btn">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="copyright">
+                    <span><i class="far fa-copyright"></i> 2025 DarkHolds. All rights reserved.</span>
+                </div>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
